@@ -115,7 +115,7 @@ def toggle_cell(event):
     cell = event.widget
     if cell["bg"] == "white":  # if you click on the cell with white background
         if cell["text"] == "0":  # if you click on the cell with 0
-            cell.config(bg="red")
+            cell.config(fg="red",bg="red")
             if chance == 1:
                 messagebox.showinfo("Game Over", "You lost the game!")
                 new_game()
@@ -123,7 +123,7 @@ def toggle_cell(event):
                 chance -= 1
                 chance_var.set(f"You have {chance} chances!")
         elif cell["text"] == "1":  # if you click on the cell with 1
-            cell.config(bg="black")
+            cell.config(fg="black",bg="black")
             global left_cells
             left_cells -= 1
             update_number_win(left_cells)
